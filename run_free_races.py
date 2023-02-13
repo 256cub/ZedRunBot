@@ -1,6 +1,5 @@
 import time
 
-import config
 from termcolor import colored
 
 from Main import *

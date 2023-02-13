@@ -1046,6 +1046,9 @@ def render_html_for_discord(status_code, data):
 
 
 def save_json_to_file(json_date, file_path):
+    return
+
+    # For DEBUG purpose
     dir_path = os.path.dirname(file_path)
 
     path = Path(dir_path)
@@ -1349,7 +1352,7 @@ def detect_my_horses_not_in_race(timestamp):
 
     response = requests.get(url)
     response_json = response.json()
-    save_json_to_file(response_json, APP_PATH + 'json/{}/horses/my_horses_in_races/{}.json'.format(timestamp, timestamp))
+    save_json_to_file(response_json, os.environ.get('APP_PATH') + 'json/{}/horses/my_horses_in_races/{}.json'.format(timestamp, timestamp))
 
     available_for_race = []
     for result in response_json:
